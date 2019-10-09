@@ -20,3 +20,21 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+# cloud stream
+spring:
+ cloud:
+  stream:
+    bindings:
+      # output is the name of your channel and maps to
+      # the Source.output() channel
+      output:
+        # topic name
+        destination: orgChangeTopic
+        # Type of message being sent/received
+        content: application/json
+      kafka:
+        binder:
+          # zookeeper
+          zkNodes: localhost
+          brokers: localhost
