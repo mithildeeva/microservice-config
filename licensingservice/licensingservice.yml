@@ -36,3 +36,8 @@ spring:
        binder:
          zkNodes: localhost
          brokers: localhost
+        ## custom input channel
+        # inBoundOrgChange:
+        #   destination: orgChangeTopic
+        #   content-type: application/json
+        #   group: licensingGroup
